@@ -9,7 +9,6 @@ exports.register = (req, res) => {
         if (err) {
             res.status(500).send({message: err})
         }
-        user.hash_password = undefined;
         res.status(200).json(user)
     })
 }
