@@ -5,7 +5,7 @@ module.exports = function (app) {
     const userHandlers = require('../controller/authController');
 
     app.route('/api/requests')
-        .get(userHandlers.loginRequired, requests.listAllRequests)
+        .get(requests.listAllRequests)
         .post(requests.createNewRequest);
 
     app.route('/api/request/:id')
