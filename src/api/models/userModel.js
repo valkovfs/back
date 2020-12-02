@@ -2,6 +2,7 @@
 
 const mongoose = require('mongoose');
 const bcrypt = require('bcryptjs');
+const uniqueValidator = require('mongoose-unique-validator')
 
 const Schema = mongoose.Schema;
 
@@ -13,9 +14,9 @@ const UserSchema = new Schema({
     },
     email: {
         type: String,
-        unique: true,
-        trim: true,
         required: true,
+        unique: true
+
     },
     hash_password: {
         type: String,
@@ -26,9 +27,9 @@ const UserSchema = new Schema({
         default: Date.now,
     }
 })
-
-UserSchema.method.comparePassword = async function(password) {
-    return await  bcrypt.compareSync(password, this.hash_password)
+UserSchema.plugin(uniqueValidator)
+UserSchema.methods.comparePassword = async function(password) {
+    return await bcrypt.compareSync(password, this.hash_password)
 }
 
 module.exports = mongoose.model("User", UserSchema);
