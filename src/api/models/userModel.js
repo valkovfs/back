@@ -28,8 +28,8 @@ const UserSchema = new Schema({
     }
 })
 UserSchema.plugin(uniqueValidator)
-UserSchema.methods.comparePassword = async function(password) {
-    return await bcrypt.compareSync(password, this.hash_password)
+UserSchema.methods.comparePassword = function(password) {
+    return bcrypt.compareSync(password, this.hash_password)
 }
 
 module.exports = mongoose.model("User", UserSchema);
