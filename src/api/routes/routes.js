@@ -1,8 +1,17 @@
 'use strict';
 
 module.exports = function (app) {
+    const projects = require('../controller/projectController')
     const requests = require('../controller/requestController');
     const userHandlers = require('../controller/authController');
+
+    app.route('/api/projects')
+        .get(projects.listAllProjects)
+        .post(projects.createNewProject);
+
+    app.route('/api/projects/:id')
+        .put(userHandlers.loginRequired, projects.updateProject)
+        .delete(userHandlers.loginRequired, projects.deleteProject);
 
     app.route('/api/requests')
         .get(requests.listAllRequests)
