@@ -9,6 +9,15 @@ exports.listAllProjects = (req, res) => {
     });
 };
 
+exports.getProject = (req, res) => {
+    Project.findOne({_id: req.params.id}, (err, value) => {
+        if (err) {
+            res.status(500).send(err);
+        }
+        res.status(200).json(value);
+    })
+}
+
 exports.createNewProject = (req, res) => {
     let  newProject = new Project (req.body);
     newProject.save((err, value) => {

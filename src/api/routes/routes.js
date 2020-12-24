@@ -10,8 +10,10 @@ module.exports = function (app) {
         .post(projects.createNewProject);
 
     app.route('/api/projects/:id')
+        .get(projects.getProject)
         .put(userHandlers.loginRequired, projects.updateProject)
         .delete(projects.deleteProject);
+
 
     app.route('/api/requests')
         .get(requests.listAllRequests)
