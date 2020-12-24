@@ -1,6 +1,6 @@
 const mongoose = require('mongoose')
 
-const url = `mongodb+srv://valkov:bz0ivdDd8nphSeUb@cluster0.3aghh.mongodb.net/database?retryWrites=true&w=majority`;
+const url = process.env.DB_ACCESS;
 
 const connectionParams={
     useNewUrlParser: true,

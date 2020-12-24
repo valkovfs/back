@@ -11,7 +11,7 @@ module.exports = function (app) {
 
     app.route('/api/projects/:id')
         .put(userHandlers.loginRequired, projects.updateProject)
-        .delete(userHandlers.loginRequired, projects.deleteProject);
+        .delete(projects.deleteProject);
 
     app.route('/api/requests')
         .get(requests.listAllRequests)
