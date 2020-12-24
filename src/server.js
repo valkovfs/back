@@ -31,7 +31,6 @@ app.get('/', (req, res) => {
     res.send("Hello World");
 });
 
-
 const routes = require('./api/routes/routes')
 routes(app);
 

@@ -4,12 +4,15 @@ const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
     name: {
-        type:String,
-        required:true
+        type: String,
+        required: true
     },
     description: {
-        type:String,
-        required:true
+        type: String,
+        required: true
+    },
+    img: {
+        type: String,
     },
     pageLink: {
         type: String
@@ -18,17 +21,17 @@ const projectSchema = new Schema({
         type: String
     },
     technologies: {
-        type:String,
-        required:true
+        type: String,
+        required: true
     },
-    status:{
-        type:Boolean,
-        required:true
+    status: {
+        type: Boolean,
+        required: true
     },
     createdOn: {
-        type:Date,
-        default:Date.now
+        type: Date,
+        default: Date.now
     }
 });
 
-module.exports = mongoose.model("projectModel", projectSchema);
+module.exports = mongoose.model("projects", projectSchema);
