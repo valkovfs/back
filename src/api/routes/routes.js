@@ -4,10 +4,13 @@ module.exports = function (app) {
     const projects = require('../controller/projectController')
     const requests = require('../controller/requestController');
     const userHandlers = require('../controller/authController');
+    const files = require('../controller/fileController')
 
     app.route('/api/projects')
         .get(projects.listAllProjects)
         .post(projects.createNewProject);
+
+    app.route('/api/upload').post(files.files)
 
     app.route('/api/projects/:id')
         .get(projects.getProject)

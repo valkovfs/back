@@ -1,12 +1,12 @@
 'use strict'
 
-
 const express = require('express');
 const cors = require('cors');
 const bodyParser = require("body-parser");
 const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = process.env.PORT || 5000;
+const socket = require('socket.io')
 
 require('./config/db')
 
