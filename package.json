@@ -12,7 +12,7 @@
     "gridfs-stream": "^1.1.1",
     "helmet": "^4.4.1",
     "jsonwebtoken": "^8.5.1",
-    "mongoose": "^5.11.0",
+    "mongoose": "^5.11.7",
     "mongoose-unique-validator": "^2.0.3",
     "multer": "^1.4.2",
     "multer-gridfs-storage": "^4.2.0",
@@ -21,7 +21,8 @@
   },
   "scripts": {
     "start": "node src/server.js",
-    "server": "nodemon src/server.js"
+    "server": "nodemon src/server.js",
+    "test": "snyk test"
   },
   "repository": {
     "type": "git",
@@ -32,5 +33,9 @@
   "bugs": {
     "url": "https://github.com/valkovfs/back/issues"
   },
-  "homepage": "https://github.com/valkovfs/back#readme"
+  "homepage": "https://github.com/valkovfs/back#readme",
+  "devDependencies": {
+    "express-logging": "^1.1.1",
+    "snyk": "^1.460.0"
+  }
 }
