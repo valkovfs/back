@@ -2,8 +2,8 @@
 
 const express = require('express');
 const cors = require('cors');
-const helmet = require('helmet')
 const bodyParser = require("body-parser");
+const helmet = require('helmet')
 const jwt = require('jsonwebtoken');
 const app = express();
 const PORT = process.env.PORT || 5000;
